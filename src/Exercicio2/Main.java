@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class  Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         List<String> livros = new ArrayList<>();
 
         System.out.println("---LIVROS---");
@@ -19,8 +18,53 @@ public class  Main {
             System.out.println(livros.get(i));
         }
 
-        Biblioteca registro1 = new Biblioteca();
-        registro1.registrarLivro(registro1.getIsbn());
+        while (true){
+            System.out.println("Qual registro deseja realizar: " +
+                    "\n 1. Por ISBN" +
+                    "\n 2. Por ISBN e nome do livro" +
+                    "\n 3. Por ISBN, nome do livro e nome do autor" +
+                    "\n 4. Sair");
+
+            int opcao = sc.nextInt();
+
+            switch (opcao){
+                case 1:
+                    Biblioteca registro1 = new Biblioteca();
+                    System.out.println("Digite o ISBN: ");
+                    registro1.setIsbn(sc.nextInt());
+                    registro1.registrarLivro(registro1.getIsbn());
+                    break;
+                case 2:
+                    Biblioteca registro2 = new Biblioteca();
+                    System.out.println("Digite o ISBN: ");
+                    registro2.setIsbn(sc.nextInt());
+                    System.out.println("Digite o(s) nome(s) do(s) livro(s) para o registro: ");
+                    registro2.setNomeLivro(sc.next());
+                    registro2.registrarLivro(registro2.getNomeLivro(), registro2.getIsbn());
+                    break;
+                case 3:
+                    Biblioteca registro3 = new Biblioteca();
+                    System.out.println("Digite o ISBN: ");
+                    registro3.setIsbn(sc.nextInt());
+                    System.out.println("Digite o(s) nome(s) do(s) livro(s) para o registro: ");
+                    registro3.setNomeLivro(sc.next());
+                    System.out.println("Digite o nome do(a) autor(a): ");
+                    registro3.setGeneroLivro(sc.next());
+                    registro3.registrarLivro(registro3.getNomeLivro(), registro3.getIsbn(), registro3.getGeneroLivro());
+                    break;
+                case 4:
+                    System.out.println("Programa de registro encerrado!");
+                    System.exit(0);
+                default:
+                    System.out.println("Opçao invalida, tente novamente!");
+                    break;
+            }
+        }
+
+
+
+
+
 
 
     }

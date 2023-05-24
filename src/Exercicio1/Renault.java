@@ -1,5 +1,7 @@
 package Exercicio1;
 
+import java.util.Scanner;
+
 public class Renault extends Carros {
 
     public Renault(String marca, int ano, double valor, String cor, int portas, double velocidade) {
@@ -7,7 +9,7 @@ public class Renault extends Carros {
     }
 
     public void iniciarPartidaDoMotor() {
-      double inicio = getVelocidade() - getVelocidade();
+      double inicio = getVelocidade();
         System.out.println("Iniciando o motor...minha velocidade está em " + inicio + " km");
 
     }
