@@ -6,7 +6,6 @@ public class Hyundai extends Carros{
         super(marca, ano, valor, cor, portas, 5);
     }
     public void iniciarPartidaDoMotor() {
-
         System.out.println("Iniciando o motor...minha velocidade está em " + getVelocidade());
     }
 

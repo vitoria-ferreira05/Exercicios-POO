@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class  Main {
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         List<String> livros = new ArrayList<>();
@@ -18,7 +18,7 @@ public class  Main {
             System.out.println(livros.get(i));
         }
 
-        while (true){
+        while (true) {
             System.out.println("Qual registro deseja realizar: " +
                     "\n 1. Por ISBN" +
                     "\n 2. Por ISBN e nome do livro" +
@@ -27,7 +27,8 @@ public class  Main {
 
             int opcao = sc.nextInt();
 
-            switch (opcao){
+
+            switch (opcao) {
                 case 1:
                     Biblioteca registro1 = new Biblioteca();
                     System.out.println("Digite o ISBN: ");
@@ -40,6 +41,7 @@ public class  Main {
                     registro2.setIsbn(sc.nextInt());
                     System.out.println("Digite o(s) nome(s) do(s) livro(s) para o registro: ");
                     registro2.setNomeLivro(sc.next());
+                    sc.nextLine();
                     registro2.registrarLivro(registro2.getNomeLivro(), registro2.getIsbn());
                     break;
                 case 3:
@@ -48,24 +50,20 @@ public class  Main {
                     registro3.setIsbn(sc.nextInt());
                     System.out.println("Digite o(s) nome(s) do(s) livro(s) para o registro: ");
                     registro3.setNomeLivro(sc.next());
-                    System.out.println("Digite o nome do(a) autor(a): ");
+                    sc.nextLine();
+                    System.out.println("Digite o genero: ");
                     registro3.setGeneroLivro(sc.next());
+                    sc.nextLine();
                     registro3.registrarLivro(registro3.getNomeLivro(), registro3.getIsbn(), registro3.getGeneroLivro());
                     break;
                 case 4:
                     System.out.println("Programa de registro encerrado!");
                     System.exit(0);
+                    break;
                 default:
                     System.out.println("Opçao invalida, tente novamente!");
                     break;
             }
         }
-
-
-
-
-
-
-
     }
 }

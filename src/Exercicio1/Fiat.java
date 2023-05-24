@@ -5,7 +5,7 @@ public class Fiat extends Carros{
         super(marca, ano, valor, cor, portas, 3);
     }
     public void iniciarPartidaDoMotor() {
-        double inicio = getVelocidade() - getVelocidade() ;
+        double inicio = getVelocidade();
         System.out.println("Iniciando o motor...minha velocidade está em " + getVelocidade());
     }
 
